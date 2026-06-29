@@ -1,6 +1,6 @@
-/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 
-/* Reset básico para remover as margens automáticas dos navegadores */
+
 * {
   box-sizing: border-box;
   margin: 0;

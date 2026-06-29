@@ -1,8 +1,7 @@
-// Exemplo de como usaremos no componente principal:
+
 import { useDeck } from './hooks/useDeck';
 import { Button } from '../../components/Button';
 
-// Dentro do seu componente:
 const { currentCharacter, nextCard, prevCard } = useDeck();
 
 return (
