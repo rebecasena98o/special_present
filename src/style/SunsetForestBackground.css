@@ -1,0 +1,132 @@
+.sf-bg {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 0;
+  background: linear-gradient(
+    to bottom,
+    #140f2e 0%,
+    #3c2161 22%,
+    #7a2f57 42%,
+    #c44b3c 60%,
+    #f08a3c 76%,
+    #ffce6b 90%,
+    #ffe9b0 100%
+  );
+}
+
+.sf-sun {
+  position: absolute;
+  left: 50%;
+  bottom: 14%;
+  width: 46vw;
+  height: 46vw;
+  max-width: 520px;
+  max-height: 520px;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    circle,
+    #fff6d8 0%,
+    #ffe9b0 18%,
+    #ffce6b 38%,
+    rgba(255, 170, 80, 0.55) 60%,
+    rgba(255, 170, 80, 0) 78%
+  );
+  filter: blur(2px);
+  z-index: 1;
+}
+
+.sf-stars {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 42%, transparent 58%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 42%, transparent 58%);
+}
+.sf-stars::before,
+.sf-stars::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: transparent;
+}
+.sf-stars::before {
+  box-shadow: var(--stars-a);
+  animation: sf-twinkle 3.2s ease-in-out infinite;
+}
+.sf-stars::after {
+  box-shadow: var(--stars-b);
+  animation: sf-twinkle 3.6s ease-in-out infinite reverse;
+}
+
+.sf-shoot {
+  position: absolute;
+  top: var(--t);
+  left: var(--l);
+  width: 90px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, rgba(255, 247, 214, 0.95), rgba(255, 247, 214, 0));
+  transform: rotate(35deg);
+  opacity: 0;
+  z-index: 3;
+  animation: sf-shoot var(--dur) linear var(--delay) infinite;
+}
+
+.sf-fireflies {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+}
+.sf-firefly {
+  position: absolute;
+  top: var(--t);
+  left: var(--l);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--c);
+  box-shadow: 0 0 6px 2px var(--c);
+  animation: sf-firefly var(--dur) ease-in-out var(--delay) infinite;
+}
+
+.sf-forest-back,
+.sf-forest-front {
+  position: absolute;
+  left: -5%;
+  width: 110%;
+  bottom: 0;
+}
+.sf-forest-back {
+  height: 32%;
+  z-index: 4;
+  opacity: 0.55;
+  filter: blur(1.5px);
+}
+.sf-forest-front {
+  height: 30vh;
+  z-index: 6;
+}
+
+@keyframes sf-twinkle {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 1; }
+}
+
+@keyframes sf-shoot {
+  0% { transform: translate(0, 0) rotate(35deg); opacity: 0; }
+  4% { opacity: 1; }
+  18% { transform: translate(260px, 190px) rotate(35deg); opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes sf-firefly {
+  0%, 100% { transform: translate(0, 0); opacity: 0.15; }
+  50% { transform: translate(6px, -14px); opacity: 1; }
+}

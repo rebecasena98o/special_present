@@ -1,0 +1,50 @@
+/* src/style/App.css */
+
+/* Remove margens e garante o fluxo normal de tela */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #000; /* Fundo base rígido antes do carregamento do pôr do sol */
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+.app-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  height: 100vh;
+  padding: 0 40px;
+  box-sizing: border-box;
+  background: transparent; /* CORREÇÃO SÊNIOR: Remove cores sólidas que possam cobrir a floresta */
+}
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10; /* Mantém os botões sempre clicáveis acima do pôr do sol e das árvores */
+}
+
+.center-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  height: 100%;       /* CORREÇÃO: Garante que o palco central use toda a altura disponível */
+  position: relative; /* CORREÇÃO CRÍTICA: Dá base sólida para a transição dos cards e elementos absolutos */
+}
+
+/* Ajuste simples para telas menores */
+@media (max-width: 600px) {
+  .app-container {
+    padding: 0 10px;
+  }
+}

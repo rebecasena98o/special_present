@@ -1,0 +1,127 @@
+
+.card-perspective {
+  width: 320px;
+  height: 650px;
+  perspective: 1200px;
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  border: 4px solid #fff;
+  background: #141419;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-front {
+  background: #1e1e24;
+}
+
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  image-rendering: pixelated;
+}
+
+.placeholder-sprite {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-family: monospace;
+}
+
+.card-name-label {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 6px 16px;
+  border: 2px solid #fff;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  padding: 24px;
+  background: #0b0b0d;
+  color: #fff;
+  border: 4px solid;
+  justify-content: space-between;
+}
+
+.stats-header {
+  border-bottom: 2px solid #222;
+  padding-bottom: 10px;
+}
+
+.stats-header h3 {
+  margin: 4px 0;
+  font-size: 22px;
+}
+
+.char-number {
+  font-size: 12px;
+  color: #666;
+  font-family: monospace;
+}
+
+.char-origin {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.char-message {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #ddd;
+  margin: 15px 0;
+  overflow-y: auto;
+  max-height: 180px;
+  padding-right: 4px;
+}
+
+.stats-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stat-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  font-family: monospace;
+  margin-bottom: 4px;
+}
+
+.stat-bar-bg {
+  background: #222;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.stat-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.4s ease-out;
+}

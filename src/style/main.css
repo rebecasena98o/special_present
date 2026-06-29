@@ -1,0 +1,9 @@
+/* Efeito de "pressionar" o botão de pixel */
+.pixel-button:hover {
+  filter: brightness(1.2); /* Deixa a seta levemente mais brilhante */
+}
+
+.pixel-button:active {
+  /* Mantém o espelhamento se for o botão 'prev' e adiciona o efeito de clique para baixo */
+  transform: translateY(4px) !important; 
+}
