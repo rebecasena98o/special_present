@@ -32,22 +32,30 @@
     height: 100%;
     perspective: 800px;
     z-index: 10; /* Fica acima do cenário #castle */
-    pointer-events: none; /* Garante que o texto subindo não impeça interações no fundo */
+    overflow: hidden;
+    cursor: grab;
+    touch-action: none;
 }
 
+.star-wars-wrap:active {
+    cursor: grabbing;
+}
+
+   
 .crawl {
     position: absolute;
-    bottom: 0;
+    top: 100%; /* o topo do bloco (H1) começa colado na base da tela */
     left: 50%;
     width: 60%;
-    margin-left: -30%;
+    margin-left: 15%;
     color: #feda4a; 
     font-family: 'Century Gothic', 'Pathway Gothic One', sans-serif;
-    font-size: 1.8rem;
-    line-height: 1.5em;
+    font-size: 1.9rem;
+    line-height: 1.2em;
     text-align: justify;
     transform-origin: 50% 100%;
-    animation: crawl 25s linear infinite;
+    will-change: transform;
+    user-select: none;
 }
 
 .crawl h1, .crawl h2 {
@@ -55,18 +63,55 @@
     margin-bottom: 20px;
 }
 
-@keyframes crawl {
-    0% {
-        transform: rotateX(30deg) translateY(100vh) translateZ(0);
-        opacity: 1;
-    }
-    90% {
-        opacity: 0.8;
-    }
-    100% {
-        transform: rotateX(30deg) translateY(-2200px) translateZ(-500px);
-        opacity: 0;
-    }
+/* === CONTROLES DA ROLAGEM (play/pause + barra de progresso) === */
+.crawl-controls {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 24px;
+    background: linear-gradient(to top, rgba(0, 25, 32, 0.9), rgba(0, 25, 32, 0));
+    z-index: 1001; /* acima do star-wars-wrap e do botão voltar */
+}
+
+.crawl-btn {
+    flex: 0 0 auto;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid #feda4a;
+    background: transparent;
+    color: #feda4a;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.crawl-btn:hover {
+    background: rgba(254, 218, 74, 0.15);
+}
+
+.crawl-progress-track {
+    flex: 1;
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(254, 218, 74, 0.2);
+    cursor: pointer;
+    position: relative;
+}
+
+.crawl-progress-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: 3px;
+    background: #feda4a;
 }
 
 /* === CENÁRIO DA ROSA AVANÇADA (Z-INDEX 1) === */
@@ -85,7 +130,7 @@
 
 #castle #table {
     position: absolute;
-    left: calc(50% - 200px);
+    left: calc(25% - 200px);
     top: calc(50% - -50px);
     width: 400px;
     height: 400px;
@@ -97,8 +142,8 @@
 
 #castle .shade-wrap {
     position: absolute;
-    left: calc(50% - 100px);
-    top: calc(52% - 250px);
+    left: calc(25% - 100px);
+    top: calc(59% - 250px);
     width: 200px;
     height: 400px;
 }

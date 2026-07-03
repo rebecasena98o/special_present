@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import buttonOneImg from '../assets/ui/Button-one.png';
 import buttonTwoImg from '../assets/ui/Button-two.png';
+import backgroundImg from '../assets/background/background_neve.png';
 
 export default function Home() {
   const navigate = useNavigate();
@@ -16,7 +17,11 @@ export default function Home() {
       alignItems: 'center',
       height: '100vh',
       width: '100vw',
-      backgroundColor: '#09090b',
+      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${backgroundImg})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      imageRendering: 'pixelated',
       color: '#fff',
       fontFamily: "'Press Start 2P', sans-serif",
     }}>
