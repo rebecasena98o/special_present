@@ -94,7 +94,7 @@ export default function Home() {
             alt="O Despertar da Flor" 
             style={{
               width: '240px',
-              imageRendering: 'pixelated', 
+              imageRendering: 'pixelated',
               display: 'block'
             }}
           />
