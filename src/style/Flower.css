@@ -120,7 +120,7 @@
     inset: 0;
     width: 100vw;
     height: 100vh;
-    background: radial-gradient(#293c4d, #001920);
+    background: radial-gradient(#000000, #001920);
     z-index: 1;
 }
 

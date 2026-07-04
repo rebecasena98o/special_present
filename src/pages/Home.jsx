@@ -66,9 +66,9 @@ export default function Home() {
             src={buttonOneImg} 
             alt="Cartas 3D" 
             style={{
-              width: '240px', // Ajuste o tamanho conforme achar melhor para o layout
+              width: '240px',
               height: 'auto',
-              imageRendering: 'pixelated', // Mantém os pixels nítidos e crocantes
+              imageRendering: 'pixelated', 
               display: 'block'
             }}
           />
@@ -93,9 +93,8 @@ export default function Home() {
             src={buttonTwoImg} 
             alt="O Despertar da Flor" 
             style={{
-              width: '240px', // Ajuste o tamanho conforme achar melhor para o layout
-              height: 'auto',
-              imageRendering: 'pixelated', // Mantém os pixels nítidos e crocantes
+              width: '240px',
+              imageRendering: 'pixelated', 
               display: 'block'
             }}
           />
